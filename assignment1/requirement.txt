@@ -1,0 +1,5 @@
+# Google Gemini API Link
+google-generativeai
+
+# Mathematical Animation Framework
+manim
