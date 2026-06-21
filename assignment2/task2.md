@@ -1,6 +1,6 @@
-## 🚀 Future Scope & Planned Extensions
+##  Future Scope & Planned Extensions
 
-As we anticipate extra room in our project timeline, we have proposed adding the following advanced modules to enhance the robustness, usability, and architecture of our automated animation pipeline:
+As we anticipate extra time in our project timeline, we have proposed adding the following advanced modules to enhance the robustness, usability, and architecture of our automated animation pipeline:
 
 ---
 
