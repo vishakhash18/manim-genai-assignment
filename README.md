@@ -65,7 +65,17 @@ manim -pql task1_pythagoras/pythagoras.py PythagorasScene
 Render Task 2 (Fourier Series Decomposition):
 manim -pql task2_fourier/fourier_series.py FourierSeries
 
-Code Post-Mortem & Critical EvaluationTask 1: Geometric Proof of the Pythagorean TheoremEvaluating the raw code directly out of the generative model revealed five structural and logical vulnerabilities:Detected FlawOperational ImpactEngineering SolutionHardcoded LaTeX CompilationMathTex() calls triggered fatal WinError 2 on machines without local LaTeX installations.Replaced mathematical typesetting with native, highly portable Text() strings.Unfilled Geometry OutlinesThe model drew empty square perimeters, failing to convey the spatial concept of area equivalence.Applied explicit .set_fill(color, opacity=0.4) modifiers to all bounding polygons.Static Spatial CoordinatesPositional vectors were absolute arrays (e.g., [2, 1, 0]), causing label overlapping during scaling.Transitioned layout logic to relative hooks using anchor bindings like .next_to(triangle, LEFT).Zero Animation IntervalsThe script rendered visual components instantly without structural pauses, making the video unwatchable.Implemented strategic .wait(1.5) intervals following major presentation milestones.Viewport Layout CollisionsThe primary equation block overlapped the core triangle rendering region due to poor bounding box limits.Shifted formulas away from graphics layers using explicit boundary modifiers like .to_edge(UP, buff=0.5).
+### Task 1: Geometric Proof of the Pythagorean Theorem
+
+Evaluating the raw code directly out of the generative model revealed five structural and logical vulnerabilities:
+
+| Detected Flaw | Operational Impact | Engineering Solution |
+| :--- | :--- | :--- |
+| **Hardcoded LaTeX Compilation** | `MathTex()` calls triggered fatal `WinError 2` on machines without local LaTeX installations. | Replaced mathematical typesetting with native, highly portable `Text()` strings. |
+| **Unfilled Geometry Outlines** | The model drew empty square perimeters, failing to convey the spatial concept of area equivalence. | Applied explicit `.set_fill(color, opacity=0.4)` modifiers to all bounding polygons. |
+| **Static Spatial Coordinates** | Positional vectors were absolute arrays (e.g., `[2, 1, 0]`), causing label overlapping during scaling. | Transitioned layout logic to relative hooks using anchor bindings like `.next_to(triangle, LEFT)`. |
+| **Zero Animation Intervals** | The script rendered visual components instantly without structural pauses, making the video unwatchable. | Implemented strategic `.wait(1.5)` intervals following major presentation milestones. |
+| **Viewport Layout Collisions** | The primary equation block overlapped the core triangle rendering region due to poor bounding box limits. | Shifted formulas away from graphics layers using explicit boundary modifiers like `.to_edge(UP, buff=0.5)`. |
 
 Task 2: Harmonic Fourier Series Synthesis
 Compiling the raw output from the second model generation exposed severe syntax hallucinations and tracking deficiencies:
