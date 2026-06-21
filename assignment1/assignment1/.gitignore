@@ -1,1 +1,11 @@
+# Local Environment
+env/
+venv/
+.env
 
+# Python Caches
+**/__pycache__/
+*.pyc
+
+# Manim Media Output
+media/
